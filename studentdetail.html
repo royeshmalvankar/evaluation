@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h1>Student reprt card</h1></div>
+</body>
+<script>
+    function Student(name,rl,cl,sc){
+        this.Name=name;
+        this.Roll_no=rl;
+        this.Class=cl;
+        this.Section=sc;
+        this.marks_of_5_subject={
+            Science:72,
+            maths:75,
+            social_science:79,
+            english:80,
+            hindi:67
+        }
+        this.printTop3Subjects=function(){
+            if(this.marks_of_5_subject.Science > this.marks_of_5_subject.maths)
+            {
+                console.log("Science");
+            }
+            else
+            {
+                console.log("maths");
+            }
+            if(this.marks_of_5_subject.social_science > this.marks_of_5_subject.hindi)
+            {
+                console.log("social_science");
+            }
+            else
+            {
+                console.log("hindi");
+            }
+            if(this.marks_of_5_subject.Science > this.marks_of_5_subject.english)
+            {
+                console.log("social_science");
+            }
+            else
+            {
+                console.log("english");
+            }
+        }
+            this.percentage=function(){
+                let total=this.marks_of_5_subject.Science+this.marks_of_5_subject.maths+this.marks_of_5_subject.social_science+this.marks_of_5_subject.english+this.marks_of_5_subject.hindi
+                let per=total/500*100
+                return per;
+        }
+        this.printReportCard=function(){
+            console.log("+------------------------+",);
+            console.log("|        REPORT CARD      |");
+            console.log("+-------------------------+");
+            console.log(`| Name            - ${this.Name}|`);
+            console.log(`|Roll no.         -${this.Roll_no}     |`);
+            console.log(`|Class             -${this.Class}     |`);
+            console.log(`|Section           -${this.Section}     |`);
+            console.log(`|Science           -${this.marks_of_5_subject.Science}    |`);
+            console.log(`|S.sc              -${this.marks_of_5_subject.social_science}    |`);
+            console.log(`|Maths             -${this.marks_of_5_subject.maths}    |`);
+            console.log(`|English           -${this.marks_of_5_subject.english}    |`);
+            console.log(`|Hindi             -${this.marks_of_5_subject.hindi}    |`);
+            console.log(`|Percentage        -${this.percentage()}% |`);
+        }
+    }
+    let stu1=new Student("royesh",21,"a","c")
+    stu1.printTop3Subjects()
+    stu1.printReportCard()
+</script>
+</html>
